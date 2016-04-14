@@ -12,7 +12,7 @@ RUN echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty-updates multiverse
 RUN apt-get update && apt-get install -y software-properties-common
 
 # Install Dependencies.
-RUN apt-get update && apt-get install -y autoconf automake bison build-essential fail2ban gawk git-core wget zip unzip make libncurses5-dev libssl-dev gcc g++ openjdk-6-jdk unixodbc-dev xsltproc vim-nox
+RUN apt-get update && apt-get install -y autoconf automake bison build-essential fail2ban gawk git-core wget zip unzip make libncurses5-dev libssl-dev gcc g++ openjdk-6-jdk unixodbc-dev xsltproc vim-nox libexpat1-dev libxml2-dev
 
 # Install source code dependencies.
 ADD build/install-deps.sh /root/install-deps.sh
