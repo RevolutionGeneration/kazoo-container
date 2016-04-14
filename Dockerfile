@@ -42,6 +42,9 @@ ADD conf/kazoo/app.config /etc/kazoo/app.config
 ADD conf/kazoo/config.ini /etc/kazoo/config.ini
 ADD conf/kazoo/vm.args /etc/kazoo/vm.args
 
+RUN mkdir /var/log/kazoo
+RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
+
 # TODO configure fail2ban
 
 # Start Kazoo
