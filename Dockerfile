@@ -44,4 +44,6 @@ ADD conf/kazoo/vm.args /etc/kazoo/vm.args
 
 # TODO configure fail2ban
 
-# TODO start kazoo
+# Start Kazoo
+/opt/kazoo/scripts/start-ecallmgr.sh
+/opt/kazoo/scripts/start-apps.sh
