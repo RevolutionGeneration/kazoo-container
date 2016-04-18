@@ -24,7 +24,7 @@ RUN rm install-deps.sh
 # Download Kazoo
 RUN git clone https://github.com/2600hz/kazoo.git -b 3.22 /opt/kazoo
 
-# TODO add kazoo user
+# TODO run it as kazoo user
 #RUN adduser --gecos "Kazoo Voice Platform" --no-create-home --disabled-login --disabled-password --system --ingroup kazoo --home /opt/kazoo kazoo
 #RUN chown -R kazoo:kazoo /opt/kazoo
 
@@ -47,6 +47,11 @@ RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
 
 # TODO configure fail2ban
 
-# Start Kazoo
-/opt/kazoo/scripts/start-ecallmgr.sh
-/opt/kazoo/scripts/start-apps.sh
+# Startup Script and Ports
+WORKDIR ~
+COPY start.sh /usr/local/bin/
+RUN  chmod +x /usr/local/bin/start.sh
+
+EXPOSE 8000
+
+CMD ["/usr/local/bin/start.sh"]
