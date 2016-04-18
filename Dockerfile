@@ -36,6 +36,9 @@ RUN git clone https://github.com/2600hz/kazoo.git -b 3.22 /opt/kazoo
 WORKDIR /opt/kazoo
 ENV ERL_LIBS=/opt/kazoo/lib
 RUN make clean all
+RUN make
+
+RUN alias sup="/opt/kazoo/utils/sup/sup"
 
 RUN mkdir /etc/kazoo
 ADD conf/kazoo/app.config /etc/kazoo/app.config
@@ -45,10 +48,11 @@ ADD conf/kazoo/vm.args /etc/kazoo/vm.args
 RUN mkdir /var/log/kazoo
 RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
 
+RUN mkdir /root
+
 # TODO configure fail2ban
 
 # Startup Script and Ports
-WORKDIR ~
 COPY start.sh /usr/local/bin/
 RUN  chmod +x /usr/local/bin/start.sh
 

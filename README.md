@@ -15,7 +15,7 @@ or alternatively update /etc/host file
   -h node0.example.com \
   -tid \
   --dns=8.8.8.8 \
-  -p 8000:8000 \
+  -p 0.0.0.0:8000:8000 \
   --link rabbitmq:rabbitmq \
   --link couchdb:couchdb \
   --name kazoo \
