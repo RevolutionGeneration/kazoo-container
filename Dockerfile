@@ -48,8 +48,6 @@ ADD conf/kazoo/vm.args /etc/kazoo/vm.args
 RUN mkdir /var/log/kazoo
 RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
 
-RUN mkdir /root
-
 # TODO configure fail2ban
 
 # Startup Script and Ports

@@ -19,8 +19,8 @@ or alternatively update /etc/host file
   --link rabbitmq:rabbitmq \
   --link couchdb:couchdb \
   --name kazoo \
-  -e MY_COOKIE=CHANGE_ME \
-  revgen/rabbitmq-kazoo \
+  -e MY_COOKIE=jasdfiNJIAEJb23ja9vjNAK \
+  revgen/kazoo-container \
   /bin/bash
 ``` 
 
