@@ -7,6 +7,7 @@ The container currently uses the latest stable release version 3.22.
 ## Start
 start revgen/couchdb-container with --name couchdb
 start revgen/rabbitmq-container with --name rabbitmq
+start revgen/freeswitch-container with --name freeswitch
 
 ```
  docker run \
@@ -16,6 +17,7 @@ start revgen/rabbitmq-container with --name rabbitmq
   -p 0.0.0.0:8000:8000 \
   --link rabbitmq:rabbitmq \
   --link couchdb:couchdb \
+  --link freeswitch:freeswitch \
   --name kazoo \
   -e MY_COOKIE=CHANGE_ME \
   revgen/kazoo-container \
