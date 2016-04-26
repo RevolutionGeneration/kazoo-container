@@ -25,10 +25,10 @@ RUN rm install-deps.sh
 RUN git clone --depth=50 --branch=master https://github.com/2600hz/kazoo.git /opt/kazoo
 
 WORKDIR /opt/kazoo/deps
-RUN make
-WORKDIR /opt/kazoo
-RUN make -C core all
-RUN make
+#RUN make
+#WORKDIR /opt/kazoo
+#RUN make -C core all
+#RUN make
 
 RUN mkdir /etc/kazoo
 ADD conf/kazoo/app.config /etc/kazoo/app.config
@@ -36,7 +36,7 @@ ADD conf/kazoo/config.ini /etc/kazoo/config.ini
 ADD conf/kazoo/vm.args /etc/kazoo/vm.args
 
 RUN mkdir /var/log/kazoo
-RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
+#RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
 
 # TODO configure fail2ban
 
