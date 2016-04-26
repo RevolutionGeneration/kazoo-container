@@ -9,8 +9,7 @@ The container currently uses the latest stable release version 3.22.
 ```
  docker run \
     -tid \
-    --net=host \
-    -h n1.wdcloud.eu \ 
+    --net=host \ 
     --name=kazoo \
     -e MY_COOKIE=COOKIE \
     revgen/kazoo-container /bin/bash
