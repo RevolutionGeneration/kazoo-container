@@ -2,7 +2,7 @@ Kazoo Dockerfile
 ================
 
 This project can be used to deploy a Kazoo server inside a Docker container.
-The container currently uses the latest stable release version 3.22.
+The container currently uses master branch (kazoo v4).
 
 ## Start
 
