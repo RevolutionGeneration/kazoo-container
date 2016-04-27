@@ -39,7 +39,7 @@ RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
 COPY scripts/start-apps.sh /usr/local/bin/
 RUN  chmod +x /usr/local/bin/start-apps.sh
 
-COPY start-ecallmgr.sh /usr/local/bin/
+COPY scripts/start-ecallmgr.sh /usr/local/bin/
 RUN  chmod +x /usr/local/bin/start-ecallmgr.sh
 
 COPY start.sh /usr/local/bin/
