@@ -12,5 +12,3 @@ touch /var/log/kazoo/kazoo.log;
 chown syslog /var/log/kazoo/kazoo.log;
 chgrp adm /var/log/kazoo/kazoo.log;
 service rsyslog restart;
-
-/bin/bash

@@ -24,11 +24,8 @@ RUN rm install-deps.sh
 # Download Kazoo
 RUN git clone --depth=50 --branch=master https://github.com/2600hz/kazoo.git /opt/kazoo
 
-WORKDIR /opt/kazoo/deps
-#RUN make
-#WORKDIR /opt/kazoo
-#RUN make -C core all
-#RUN make
+WORKDIR /opt/kazoo/
+RUN make
 
 RUN mkdir /etc/kazoo
 ADD conf/kazoo/app.config /etc/kazoo/app.config
@@ -36,13 +33,16 @@ ADD conf/kazoo/config.ini /etc/kazoo/config.ini
 ADD conf/kazoo/vm.args /etc/kazoo/vm.args
 
 RUN mkdir /var/log/kazoo
-#RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
-
-# TODO configure fail2ban
+RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
 
 # Startup Script and Ports
+COPY scripts/start-apps.sh /usr/local/bin/
+RUN  chmod +x /usr/local/bin/start-apps.sh
+
+COPY start-ecallmgr.sh /usr/local/bin/
+RUN  chmod +x /usr/local/bin/start-ecallmgr.sh
+
 COPY start.sh /usr/local/bin/
 RUN  chmod +x /usr/local/bin/start.sh
-
 
 CMD ["/usr/local/bin/start.sh"]

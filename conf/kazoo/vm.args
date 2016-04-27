@@ -11,6 +11,9 @@
 # Start a pool of asynchronous IO threads
 +A 25
 
+# Hearbeat disbled by default
+-heart
+
 -kernel inet_dist_listen_min 11500 inet_dist_listen_max 11999
 
 # Comment this line out if you want the Erlang shell
@@ -18,3 +21,11 @@
 
 # Treat error_logger:warning_msg/2 as warnings instead of errors (default)
 +W w
+
+# GC more often
+##-env ERL_FULLSWEEP_AFTER 10
+
+# Increase number of concurrent ports / sockets
+##-env ERL_MAX_PORTS 4096
+
+-s whistle_apps_app
