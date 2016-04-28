@@ -22,7 +22,7 @@ RUN ./install-deps.sh
 RUN rm install-deps.sh
 
 # Download Kazoo
-RUN git clone --depth=50 --branch=master https://github.com/2600hz/kazoo.git /opt/kazoo
+RUN git clone --depth=50 --branch=master https://github.com/RevolutionGeneration/kazoo.git /opt/kazoo
 
 WORKDIR /opt/kazoo/
 RUN make
