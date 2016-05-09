@@ -36,13 +36,15 @@ RUN mkdir /var/log/kazoo
 RUN ln -s /var/log/kazoo /opt/kazoo/scripts/log
 
 # Startup Script and Ports
-COPY scripts/start-apps.sh /usr/local/bin/
-RUN  chmod +x /usr/local/bin/start-apps.sh
+COPY scripts/start-apps.sh /opt/kazoo/scripts/
+RUN chmod +x /opt/kazoo/scripts/start-apps.sh
+RUN ln -s /opt/kazoo/scripts/start-apps.sh /usr/local/bin/start-apps.sh
 
-COPY scripts/start-ecallmgr.sh /usr/local/bin/
-RUN  chmod +x /usr/local/bin/start-ecallmgr.sh
+COPY scripts/start-ecallmgr.sh /opt/kazoo/scripts/
+RUN chmod +x /opt/kazoo/scripts/start-ecallmgr.sh
+RUN ln -s /opt/kazoo/scripts/start-ecallmgr.sh /usr/local/bin/start-ecallmgr.sh
 
 COPY start.sh /usr/local/bin/
-RUN  chmod +x /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
 
 CMD ["/usr/local/bin/start.sh"]
